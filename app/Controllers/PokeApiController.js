@@ -4,13 +4,22 @@ import { pokeService } from "../Services/PokeService.js"
 
 function _drawPokemon(){
     let template = ''
-    ProxyState.apipoke.forEach(p => template += p.Template)
+    ProxyState.apipokelist.forEach(p => template += p.Template)
+    document.getElementById('pokeapi-list').innerHTML = template
 }
 
 export class PokeApiController{
       constructor(){
-          console.log("this the poke api controller")
-
-          pokeService.getPokemon()
+          ProxyState.on('apiokelist', _drawPokemon)
+          pokeService.getPokemonStats()
       }
+      async getPokemonStats(url){
+          try {
+          await pokeService.getPokemonStats(url)  
+              
+          } catch (error) {
+          console.error('GET_POKEMON_STATS',error)    
+          }
+      }
+          
   }

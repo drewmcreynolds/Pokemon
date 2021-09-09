@@ -1,11 +1,16 @@
+import { ProxyState } from "../AppState.js"
+import { PokeStats } from "../Models/PokeStats.js"
 
 
 
 class PokeService{
 
-    getPokemon(){
-        console.log("this the poke service")
+   async getPokemonStats(url){
+       let res = await apipokelist.get(url)
+       ProxyState.pokeStats = new PokeStats(res.data)
+        
     }
+
 
 }
 
