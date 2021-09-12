@@ -2,7 +2,7 @@ export class PokeStats{
     constructor(pokeData){
         this.id = pokeData.id
         this.name = pokeData.name
-        this.img = pokeData.spirtes.back_default
+        this.img = pokeData.sprites.back_default
         this.abilities = pokeData.abilities
         this.height = pokeData.height
         this.weight = pokeData.weight

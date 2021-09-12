@@ -10,16 +10,20 @@ function _drawPokemon(){
 
 export class PokeApiController{
       constructor(){
-          ProxyState.on('apiokelist', _drawPokemon)
-          pokeService.getPokemonStats()
+          ProxyState.on('apipokelist', _drawPokemon)
+          pokeService.getPokemonList()
+          console.log('pokeapi controller loaded')
       }
       async getPokemonStats(url){
-          try {
-          await pokeService.getPokemonStats(url)  
+            console.log('i clicked a pokemon')
+            console.log('pokemon url', url)
+
+        //   try {
+        //   await pokeService.getPokemonStats(url)  
               
-          } catch (error) {
-          console.error('GET_POKEMON_STATS',error)    
-          }
+        //   } catch (error) {
+        //   console.error('GET_POKEMON_STATS',error)    
+        //   }
       }
           
   }

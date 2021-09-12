@@ -7,6 +7,6 @@ function _drawPokeStats(){
 
 export class PokeStatsController{
     constructor(){
-        ProxyState.on('pokeStats', _drawPokeStats())
+        ProxyState.on('pokeStats', _drawPokeStats)
     }
 }
